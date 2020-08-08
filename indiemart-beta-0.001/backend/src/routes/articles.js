@@ -3,6 +3,8 @@ const {Router} = require('express');
 
 //Guarda el objeto que devuelve router
 const router = Router();
+//importa las funciones del controlador
+const {getArticles,getArticle,deleteArticle,modifyArticle,createArticle } = require('../controllers/articles.controller.js');
 
 //Cuando se visita la ruta api/articles/ con sus diferentes metodos
 router.route('/')

@@ -22,3 +22,5 @@ articlesCtrl.modifyArticle = async (req, res) => {
 articlesCtrl.deleteArticle = async (req, res) => {
 
 }
+
+module.exports = articlesCtrl;

@@ -21,4 +21,4 @@ orderCtrl.modifyOrder = async (req, res) => {
 
 }
 
-
+module.exports = orderCtrl;

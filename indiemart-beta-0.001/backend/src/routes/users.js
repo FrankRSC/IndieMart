@@ -5,8 +5,7 @@ const {Router} = require('express');
 const router = Router();
 
 //importa las funciones del controlador
-
-const {} = require('../controllers/users.controller');
+const {getUsers, getUser,deleteUser,modifyUser,createUser} = require('../controllers/users.controller.js');
 
 //Cuando se visita la ruta api/users/ con sus diferentes metodos
 router.route('/')

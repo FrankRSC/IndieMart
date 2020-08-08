@@ -21,7 +21,7 @@ app.use(cors());
 //para que el servidor use express con formatos json
 app.use(express.json());
 
-//------- Routes - Rutas de la api -----
+//------- Routes - Rutas de la api -----//
 
 //Ruta que maneja los usuarios
 
