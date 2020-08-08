@@ -6,22 +6,22 @@ userCtrl.getUsers = async (req, res) => {
 }
 
 //Crea un usuario
-userCtrl.createUser() = async (req, res)=>{
+userCtrl.createUser = async (req, res) => {
 
 }
 
 //Toma un usuario
-userCtrl.getUser() = async (req, res) => {
+userCtrl.getUser = async (req, res) => {
 
 }
 
 //Modificar usuario
-userCtrl.modifyUser() = async (req, res) => {
+userCtrl.modifyUser = async (req, res) => {
 
 }
 
 //Borrar usuario
-userCtrl.deleteUser() = async (req, res) => {
+userCtrl.deleteUser = async (req, res) => {
 
 }
 

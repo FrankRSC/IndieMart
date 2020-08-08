@@ -1,28 +1,27 @@
 //importa el objeto Schema y model
-const {Schema, model} = require('mongoose');
+const { Schema, model } = require('mongoose');
 
 //Se define el Schema de Tienda
 const tiendaSchema = new Schema({
     //id_store
-    nombre: {type: String, required: true},
-    propietario: {type: String, required: true},
-    descripcion: {type: String, required: true},
-    id_propietario: {type: String, required: true},
-    valoracion: {type: Number,min:0 , max:10 , required: treu},
+    nombre: { type: String, required: true },
+    propietario: { type: String, required: true },
+    descripcion: { type: String, required: true },
+    id_propietario: { type: String, required: true },
+    valoracion: { type: Number, min: 0, max: 10, required: true },
     //Logo
     tipo_entrega: {
-        domicilio: {type: Boolean},
-        pida_recoja: {type: Boolean},
-        required: true
-      },
+        domicilio: { type: Boolean },
+        pida_recoja: { type: Boolean },
+    },
     contacto: {
-        celular: {type: String, required: true},
-        telefono: {type: String, required: true},
+        celular: { type: String, required: true },
+        telefono: { type: String, required: true },
     },
 
 }, {
     //para que tenga la fechad e creacion o modificacion
-    timestamps:true
+    timestamps: true
 });
 
 //Exporta el schema
