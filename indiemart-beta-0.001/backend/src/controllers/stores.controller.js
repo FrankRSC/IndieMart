@@ -2,7 +2,7 @@
 const storesCtrl = {};
 
 //importa el modelo de Tienda
-const modelTienda = require('../models/Tienda');
+const modelTienda = require('../models/Store');
 
 //Metodos del objeto
 
@@ -14,11 +14,23 @@ storesCtrl.getTiendas = async (req,res) => {
 
 //Crea una tienda
 storesCtrl.crearTienda = async (req,res) => {
-    const {nombre, descripcion,propietario } = req.body;
+    const {
+        nombre, propietario,descripcion,id_propietario,valoracion,tipo_entrega,contacto 
+    } = req.body;
     const nuevaTienda = new modelTienda({
         nombre: nombre,
+        propietario: propietario,
         descripcion: descripcion,
-        propietario: propietario
+        id_propietario: id_propietario,
+        valoracion: valoracion,
+        tipo_entrega:{
+            domicilio: tipo_entrega.domicilio,
+            pida_recoja: tipo_entrega.pida_recoja
+        },
+        contacto:{
+            celular: contacto.celular,
+            telefono: contacto.telefono
+        }
     });
     await nuevaTienda.save();
     res.json({message: 'Tienda guardada'})

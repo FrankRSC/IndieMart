@@ -15,7 +15,6 @@ const userSchema = new Schema({
     tipo_usuario: {
         consumidor: {type: Boolean},
         vendedor: {type: Boolean},
-        required: true
     },
     vivienda:{
         pais: {type:String},

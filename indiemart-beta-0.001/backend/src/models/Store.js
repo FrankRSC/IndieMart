@@ -8,12 +8,11 @@ const tiendaSchema = new Schema({
     propietario: {type: String, required: true},
     descripcion: {type: String, required: true},
     id_propietario: {type: String, required: true},
-    valoracion: {type: Number,min:0 , max:10 , required: treu},
+    valoracion: {type: Number,min:0 , max:10 , required: true},
     //Logo
     tipo_entrega: {
         domicilio: {type: Boolean},
         pida_recoja: {type: Boolean},
-        required: true
       },
     contacto: {
         celular: {type: String, required: true},
