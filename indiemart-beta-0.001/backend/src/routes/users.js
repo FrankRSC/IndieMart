@@ -1,11 +1,11 @@
 //importa la funcion Router de express
-const {Router} = require('express');
+const { Router } = require('express');
 
 //Guarda el objeto que devuelve router
 const router = Router();
 
 //importa las funciones del controlador
-const {getUsers, getUser,deleteUser,modifyUser,createUser} = require('../controllers/users.controller.js');
+const { getUsers, getUser, deleteUser, modifyUser, createUser } = require('../controllers/users.controller.js');
 
 //Cuando se visita la ruta api/users/ con sus diferentes metodos
 router.route('/')
@@ -14,7 +14,7 @@ router.route('/')
     //para guardar un nuevo dato
     .post()
 
-router.route('/:id') 
+router.route('/:id')
     .get()
     //para guardar un nuevo dato
     .post()

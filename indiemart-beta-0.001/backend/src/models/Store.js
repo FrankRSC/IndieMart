@@ -1,5 +1,5 @@
 //importa el objeto Schema y model
-const {Schema, model} = require('mongoose');
+const { Schema, model } = require('mongoose');
 
 //Se define el Schema de Tienda
 const tiendaSchema = new Schema({
@@ -15,13 +15,13 @@ const tiendaSchema = new Schema({
         pida_recoja: {type: Boolean},
       },
     contacto: {
-        celular: {type: String, required: true},
-        telefono: {type: String, required: true},
+        celular: { type: String, required: true },
+        telefono: { type: String, required: true },
     },
 
 }, {
     //para que tenga la fechad e creacion o modificacion
-    timestamps:true
+    timestamps: true
 });
 
 //Exporta el schema

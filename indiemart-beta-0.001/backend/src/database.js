@@ -16,9 +16,9 @@ mongoose.connect(URI, {
 });
 
 
-const connection =  mongoose.connection;
+const connection = mongoose.connection;
 
 //hace la coneccion con mongodb
-connection.once('open', () =>{
+connection.once('open', () => {
     console.log('BD conectada');
 });
