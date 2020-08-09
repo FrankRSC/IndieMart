@@ -12,7 +12,7 @@ storesCtrl.getTiendas = async (req, res) => {
     res.json(tiendas)
 };
 
-//Crea una tienda
+//Crea una tiendaa
 storesCtrl.crearTienda = async (req, res) => {
     const { nombre, descripcion, propietario } = req.body;
     const nuevaTienda = new modelTienda({
