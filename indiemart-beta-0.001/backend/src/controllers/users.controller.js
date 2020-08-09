@@ -19,13 +19,24 @@ usersCtrl.createUser = async (req, res) => {
         vivienda
     } = req.body;
     const nuevoUsuario = new modelUsuario({
-        nombre,
+        nombre: {
+            p_nombre: nombre.p_nombre,
+            apellido_p: nombre.apellido_p,
+            apellido_m: nombre.apellido_m,
+        },
         fecha_nac,
         correo,
         contrasena,
         celular,
-        tipo_usuario,
-        vivienda
+        tipo_usuario: {
+            consumidor: tipo_usuario.consumidor,
+            vendedor: tipo_usuario.vendedor
+        },
+        vivienda: {
+            pais: vivienda.pais,
+            estado: vivienda.estado,
+            ciudad: vivienda.ciudad
+        },
     });
     await nuevoUsuario.save();
     res.json({message: 'Usuario gurdado'});
@@ -49,13 +60,24 @@ usersCtrl.modifyUser = async (req, res) => {
         vivienda
     } = req.body;
     await modelUsuario.findOneAndUpdate({ _id: req.params.id }, {
-        nombre,
+        nombre: {
+            p_nombre: nombre.p_nombre,
+            apellido_p: nombre.apellido_p,
+            apellido_m: nombre.apellido_m,
+        },
         fecha_nac,
         correo,
         contrasena,
         celular,
-        tipo_usuario,
-        vivienda
+        tipo_usuario: {
+            consumidor: tipo_usuario.consumidor,
+            vendedor: tipo_usuario.vendedor
+        },
+        vivienda: {
+            pais: vivienda.pais,
+            estado: vivienda.estado,
+            ciudad: vivienda.ciudad
+        },
     });
     res.json({ message: 'Usuarios actualizada' });
 };
