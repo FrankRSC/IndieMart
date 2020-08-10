@@ -12,7 +12,7 @@ const tiendaSchema = new Schema({
     //Logo
     tipo_entrega: {
         domicilio: {type: Boolean},
-        pida_recoja: {type: Boolean},
+        pidaRecoja: {type: Boolean},
     },
     contacto: {
         celular: { type: String, required: true },

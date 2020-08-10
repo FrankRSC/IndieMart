@@ -11,8 +11,10 @@ require('./database')
 async function main() {
 
     //app.get('port') obtiene el valor de port desde app
-    await app.listen(app.get('port'));
-    console.log('Servidor en el puerto 4000');
+    await app.listen(app.get('port'), () => {
+        console.log('Servidor en el puerto 4000');
+    });
+    
 
 }
 

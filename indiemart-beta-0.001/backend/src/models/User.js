@@ -4,15 +4,15 @@ const { Schema, model } = require('mongoose');
 const userSchema = new Schema({
     //id_propietario
     nombre: {
-        p_nombre: { type: String, required: true },
-        apellido_p: { type: String, required: true },
-        apellido_m: { type: String, required: true },
+        nombre: { type: String, required: true },
+        apellidoP: { type: String, required: true },
+        apellidoM: { type: String, required: true },
     },
-    fecha_nac: { type: Date, required: true },
+    fechaNac: { type: Date, required: true },
     correo: { type: String, required: true },
     contrasena: { type: String, required: true },
     celular: { type: String, required: true },
-    tipo_usuario: {
+    tipoUsuario: {
         consumidor: {type: Boolean},
         vendedor: {type: Boolean},
     },

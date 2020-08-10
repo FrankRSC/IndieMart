@@ -1,8 +1,8 @@
 const { Schema, model } = require('mongoose');
 
 const articleSchema = new Schema({
-    id_store: { type: String, required: true },
-    id_article: { type: String, required: true },
+    idStore: { type: String, required: true },
+    idArticle: { type: String, required: true },
     //imagenes
     nombre: { type: String, required: true },
     ingredientes: { type: String, required: true },
