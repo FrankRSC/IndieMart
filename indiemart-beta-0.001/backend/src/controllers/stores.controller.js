@@ -39,7 +39,7 @@ storesCtrl.crearTienda = async (req, res) => {
             valoracion,
             tipoEntrega: {
                 domicilio: tipoEntrega.domicilio,
-                pida_recoja: tipoEntrega.pida_recoja
+                pidaRecoja: tipoEntrega.pida_recoja
             },
             contacto: {
                 celular: contacto.celular,

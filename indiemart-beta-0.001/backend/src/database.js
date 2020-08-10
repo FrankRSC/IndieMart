@@ -1,7 +1,7 @@
 //importa mongoose
 const mongoose = require('mongoose');
 
-const URL = 'mongodb://localhost/indiemarttest';
+const URL = 'mongodb+srv://indiemart:frank123@cluster0.wx1lr.mongodb.net/IndieMart?retryWrites=true&w=majority';
 
 // process.env.MONGODB_URI usa la direccon que esta en las variables de entorno si existe
 // si no usa le direccion de URL
