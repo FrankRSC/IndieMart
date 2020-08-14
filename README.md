@@ -7,4 +7,5 @@ IndieMart es una plataforma para los negocios pequeños e independientes que se 
 - [ ] Implementar subida de imagenes a la base de datos.
 - [ ] Probar guardado en la base de datos.
 - [x] Comenzar frontend. -Izza
+- [ ] Crear modulo para contactarnos
 
