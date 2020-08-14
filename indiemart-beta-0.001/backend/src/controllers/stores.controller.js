@@ -13,7 +13,7 @@ storesCtrl.getTiendas = async (req, res) => {
         res.json(tiendas);
         res.status(200).send();
     } catch (error) {
-        res.status(404).json({message:"A ocurrido un error" , error});
+        res.status(404).json({ message: "A ocurrido un error", error });
     }
 
 };
@@ -27,9 +27,14 @@ storesCtrl.crearTienda = async (req, res) => {
         idPropietario,
         valoracion,
         tipoEntrega,
-        contacto
+        celular,
+        telefono,
+        // url,
+        // publicId
     } = req.body;
-
+    // const { url,
+    //     publicId
+    // } = req.file;
     try {
         const nuevaTienda = new modelTienda({
             nombre,
@@ -37,23 +42,20 @@ storesCtrl.crearTienda = async (req, res) => {
             descripcion,
             idPropietario,
             valoracion,
-            tipoEntrega: {
-                domicilio: tipoEntrega.domicilio,
-                pidaRecoja: tipoEntrega.pida_recoja
-            },
-            contacto: {
-                celular: contacto.celular,
-                telefono: contacto.telefono
-            }
+            tipoEntrega,
+            celular,
+            telefono,
+            // url,
+            // publicId
+
         });
-        
         await nuevaTienda.save();
         res.json({ message: 'Tienda guardada' })
         res.status(201).send();
     } catch (error) {
-        res.status(400).json({message:"A ocurrido un error" , error});
+        res.status(400).json({ message: "A ocurrido un error", error });
     }
-    
+
 };
 
 //Toma una tienda
@@ -61,9 +63,9 @@ storesCtrl.getUTienda = async (req, res) => {
     try {
         const tienda = await modelTienda.findById(req.params.id);
         res.json(tienda);
-        res.status(200).send();      
+        res.status(200).send();
     } catch (error) {
-        res.status(404).json({message:"A ocurrido un error" , error});
+        res.status(404).json({ message: "A ocurrido un error", error });
     }
 
 };
@@ -77,29 +79,32 @@ storesCtrl.updateTienda = async (req, res) => {
         idPropietario,
         valoracion,
         tipoEntrega,
-        contacto
+        celular,
+        telefono,
     } = req.body;
+
+    // const { url,
+    //     publicId
+    // } = req.file;
+
     try {
         await modelTienda.findOneAndUpdate({ _id: req.params.id }, {
             nombre: nombre,
-            propietario: propietario,
-            descripcion: descripcion,
-            idPropietario: idPropietario,
-            valoracion: valoracion,
-            tipoEntrega: {
-                domicilio: tipoEntrega.domicilio,
-                pida_recoja: tipoEntrega.pida_recoja
-            },
-            contacto: {
-                celular: contacto.celular,
-                telefono: contacto.telefono
-            }
+            propietario,
+            descripcion,
+            idPropietario,
+            valoracion,
+            tipoEntrega,
+            celular,
+            telefono,
+            url,
+            publicId
         });
         console.log(req.params.id, req.body);
         res.json({ message: 'Tienda actualizada' });
         res.status(200).send();
     } catch (error) {
-        res.status(400).json({message:"A ocurrido un error" , error});
+        res.status(400).json({ message: "A ocurrido un error", error });
     }
 };
 
@@ -110,7 +115,7 @@ storesCtrl.deleteTienda = async (req, res) => {
         res.json({ message: 'Tienda eliminada eliminada' })
         res.status(200).send();
     } catch (error) {
-        res.status(400).json({message:"A ocurrido un error" , error});
+        res.status(400).json({ message: "A ocurrido un error", error });
     }
 };
 

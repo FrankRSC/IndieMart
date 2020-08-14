@@ -20,7 +20,7 @@ const userSchema = new Schema({
         pais: { type: String },
         estado: { type: String, required: true },
         ciudad: { type: String, required: true }
-    },
+    }
 }, {
     //para que tenga la fechad e creacion o modificacion
     timestamps: true

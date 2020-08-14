@@ -48,7 +48,7 @@ usersCtrl.createUser = async (req, res) => {
         res.json({message: 'Usuario gurdado'});
         res.status(201).send();
     } catch (error) {
-        res.status(400).json({message:"A ocurrido un error" , error});
+        res.status(400).json({message:"A ocurrido un error", error});
     }
 };
 
