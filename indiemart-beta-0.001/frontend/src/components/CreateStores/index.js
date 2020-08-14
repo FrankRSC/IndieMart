@@ -56,16 +56,12 @@ export const CreateStore = props => {
             tipoEntrega: datos.tipoEntrega,
             celular: datos.celular,
             telefono: datos.telefono,
-            
         };
 
         if (datos.editing === true) {
             await axios.put('http://localhost:4000/api/tiendas/' + datos._id, newStore)
         } else {
-
             await axios.post('http://localhost:4000/api/tiendas', newStore);
-
-            
         }
 
         // props.history.push('/');
@@ -77,9 +73,9 @@ export const CreateStore = props => {
             ...datos,
             [e.target.name]: e.target.value,
 
-
         })
         console.log([e.target.name], e.target.value)
+        
 
     }
 
@@ -160,7 +156,7 @@ export const CreateStore = props => {
                             required
                         />
                     </div>
-                    {/* <div className="form-group">
+                    <div className="form-group">
                         <div>
                             <h6>Introduzca su logo</h6>
                         </div>
@@ -169,7 +165,7 @@ export const CreateStore = props => {
                             name="image"
                             onChange={onInputChange}
                         />
-                    </div> */}
+                    </div>
                     <div className="form-group">
                         <textarea
                             name="descripcion"
@@ -183,7 +179,6 @@ export const CreateStore = props => {
                     </div>
 
                     <form onSubmit={onSubmit}>
-
                         <button type="submit" className="btn btn-primary">
                             Crear
                         </button>

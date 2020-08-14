@@ -24,7 +24,6 @@ storesCtrl.crearTienda = async (req, res) => {
         nombre,
         descripcion,
         propietario,
-        idPropietario,
         valoracion,
         tipoEntrega,
         celular,
@@ -32,15 +31,12 @@ storesCtrl.crearTienda = async (req, res) => {
         // url,
         // publicId
     } = req.body;
-    // const { url,
-    //     publicId
-    // } = req.file;
+    console.log(req.file)
     try {
         const nuevaTienda = new modelTienda({
             nombre,
             propietario,
             descripcion,
-            idPropietario,
             valoracion,
             tipoEntrega,
             celular,
