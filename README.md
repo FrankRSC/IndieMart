@@ -3,9 +3,12 @@ IndieMart es una plataforma para los negocios pequeños e independientes que se 
 # TO DO
 - [x] Importar las funciones de los controladores a las rutas. -Frank
 - [x] Probar las rutas existentes. -Izza
-- [ ] CRUD de usuarios.
+- [x] CRUD de usuarios.
 - [ ] Implementar subida de imagenes a la base de datos.
-- [ ] Probar guardado en la base de datos.
+- [x] Probar guardado en la base de datos.
 - [x] Comenzar frontend. -Izza
-- [ ] Crear modulo para contactarnos
+- [ ] Crear modulo para contactarnos - Iza
+- [ ] Login - Frank
+- [ ] Registro - Iza
+- [ ] Creacion de articulos - Frank
 
