@@ -95,7 +95,6 @@ export const CreateStore = props => {
                             value={datos.propietario}
                         />
 
-
                     </div>
                     <div className="form-group">
                         <input
