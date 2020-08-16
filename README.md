@@ -10,7 +10,7 @@ IndieMart es una plataforma para los negocios pequeños e independientes que se 
 ## FRONTEND
 - [x] Comenzar frontend. -Izza
 - [ ] Crear modulo para contactarnos - Iza
-- [ ] Login - Frank
+- [x] Login - Frank
 - [x] Registro - Iza
-- [ ] Creacion de articulos - Frank
+- [x] Creacion de articulos - Frank
 
