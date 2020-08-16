@@ -7,6 +7,7 @@ import {CreateStore} from './components/CreateStores/index';
 import {Login} from './components/Login/index';
 import {CreateArticle} from './components/CreateArticles/index';
 import Navbar from './components/Navbar';
+import {CreateUser} from './components/CreateUsers/index';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/create" component={CreateStore}/>
         <Route path="/login" component={Login}/>
         <Route path="/createArticle" component={CreateArticle}/>
+        <Route path="/register" component={CreateUser}/>
       </div>
     </Router>
   );

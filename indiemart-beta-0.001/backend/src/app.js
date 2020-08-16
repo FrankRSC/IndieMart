@@ -30,7 +30,7 @@ const storage = multer.diskStorage({
     }
 });
 
-app.use(multer({storage: storage}).single('image'));
+app.use(multer(storage).single('image'));
 
 //para que el servidor use express con formatos json
 app.use(express.json());
