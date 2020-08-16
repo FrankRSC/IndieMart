@@ -12,6 +12,7 @@ const tiendaSchema = new Schema({
     tipoEntrega: {type: String, required: true},
     celular: { type: String, required: true },
     telefono: { type: String, required: true },
+    
     // url: {type: String},
     // publicId: {type: String}
 

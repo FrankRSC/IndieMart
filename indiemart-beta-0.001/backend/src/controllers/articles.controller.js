@@ -17,21 +17,21 @@ articlesCtrl.getArticles = async (req, res) => {
 //Crea un articulo
 articlesCtrl.createArticle = async (req, res) => {
     const { 
-        idStore, 
-        idArticle, 
+        // idStore, 
+        // idArticle, 
         nombre, 
         ingredientes, 
-        decripcion, 
+        descripcion, 
         precio, 
         valoracion 
     } = req.body;
     try {
         const nuevoArticulo = new modelArticle ({
-            idStore, 
-            idArticle, 
+            // idStore, 
+            // idArticle, 
             nombre, 
             ingredientes, 
-            decripcion, 
+            descripcion, 
             precio, 
             valoracion 
         });
@@ -61,7 +61,7 @@ articlesCtrl.updateArticle = async (req, res) => {
         idArticle, 
         nombre, 
         ingredientes, 
-        decripcion, 
+        descripcion, 
         precio, 
         valoracion 
     } = req.body;
@@ -71,7 +71,7 @@ articlesCtrl.updateArticle = async (req, res) => {
             idArticle, 
             nombre, 
             ingredientes, 
-            decripcion, 
+            descripcion, 
             precio, 
             valoracion 
         });

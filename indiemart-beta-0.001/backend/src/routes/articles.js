@@ -11,7 +11,7 @@ router.route('/')
     //tomar todos los datos
     .get(getArticles)
     //para guardar un nuevo dato
-    .post()
+    .post(createArticle)
 
 router.route('/:id')
     .get()
