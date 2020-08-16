@@ -8,7 +8,7 @@ usersCtrl.getUsers = async (req, res) => {
         res.json(Usuarios);
         res.status(200).send();
     } catch (error) {
-        res.status(404).json({message:"A ocurrido un error" , error});
+        res.status(404).json({ message: "A ocurrido un error", error });
     }
 };
 
@@ -16,39 +16,40 @@ usersCtrl.getUsers = async (req, res) => {
 usersCtrl.createUser = async (req, res) => {
     const {
         nombre,
-        fechaNac,
-        correo,
+        apellidoP,
+        apellidoM,
+        // fechaNac,
+        email,
         contrasena,
         celular,
-        tipoUsuario,
-        vivienda
+        // tipoUsuario,
+        pais,
+        estado,
+        ciudad,
     } = req.body;
+    console.log(req.body)
     try {
         const nuevoUsuario = new modelUsuario({
-            nombre: {
-                nombre: nombre.nombre,
-                apellidoP: nombre.apellidoP,
-                apellidoM: nombre.apellidoM,
-            },
-            fechaNac,
-            correo,
+
+            nombre,
+            apellidoP,
+            apellidoM,
+            // fechaNac,
+            email,
             contrasena,
             celular,
-            tipoUsuario: {
-                consumidor: tipoUsuario.consumidor,
-                vendedor: tipoUsuario.vendedor
-            },
-            vivienda: {
-                pais: vivienda.pais,
-                estado: vivienda.estado,
-                ciudad: vivienda.ciudad
-            },
+            // tipoUsuario,
+            pais,
+            estado,
+            ciudad,
+
         });
+        console.log(nuevoUsuario)
         await nuevoUsuario.save();
-        res.json({message: 'Usuario gurdado'});
+        res.json({ message: 'Usuario gurdado' });
         res.status(201).send();
     } catch (error) {
-        res.status(400).json({message:"A ocurrido un error", error});
+        res.status(400).json({ message: "A ocurrido un error", error });
     }
 };
 
@@ -59,7 +60,7 @@ usersCtrl.getUser = async (req, res) => {
         res.json(usuario);
         res.status(200).send();
     } catch (error) {
-        res.status(404).json({message:"A ocurrido un error" , error});
+        res.status(404).json({ message: "A ocurrido un error", error });
     }
 };
 
@@ -67,38 +68,35 @@ usersCtrl.getUser = async (req, res) => {
 usersCtrl.modifyUser = async (req, res) => {
     const {
         nombre,
-        fechaNac,
-        correo,
+        apellidoP,
+        apellidoM,
+        // fechaNac,
+        email,
         contrasena,
         celular,
-        tipoUsuario,
-        vivienda
+        // tipoUsuario,
+        pais,
+        estado,
+        ciudad,
     } = req.body;
     try {
         await modelUsuario.findOneAndUpdate({ _id: req.params.id }, {
-            nombre: {
-                nombre: nombre.nombre,
-                apellidoP: nombre.apellidoP,
-                apellidoM: nombre.apellidoM,
-            },
-            fechaNac,
-            correo,
+            nombre,
+            apellidoP,
+            apellidoM,
+            // fechaNac,
+            email,
             contrasena,
             celular,
-            tipoUsuario: {
-                consumidor: tipoUsuario.consumidor,
-                vendedor: tipoUsuario.vendedor
-            },
-            vivienda: {
-                pais: vivienda.pais,
-                estado: vivienda.estado,
-                ciudad: vivienda.ciudad
-            },
+            // tipoUsuario,
+            pais,
+            estado,
+            ciudad,
         });
         res.json({ message: 'Usuarios actualizada' });
         res.status(200).send();
     } catch (error) {
-        res.status(400).json({message:"A ocurrido un error" , error});
+        res.status(400).json({ message: "A ocurrido un error", error });
     }
 };
 
@@ -109,7 +107,7 @@ usersCtrl.deleteUser = async (req, res) => {
         res.json({ message: 'usuario eliminado' })
         res.status(200).send();
     } catch (error) {
-        res.status(400).json({message:"A ocurrido un error" , error});
+        res.status(400).json({ message: "A ocurrido un error", error });
     }
 };
 

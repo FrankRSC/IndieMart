@@ -21,7 +21,6 @@ export const CreateStore = props => {
 
     useEffect(() => {
         validar();
-
     }, [])
 
     const validar = async () => {

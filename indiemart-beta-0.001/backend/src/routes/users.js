@@ -9,18 +9,13 @@ const { getUsers, getUser, deleteUser, modifyUser, createUser } = require('../co
 
 //Cuando se visita la ruta api/users/ con sus diferentes metodos
 router.route('/')
-    //tomar todos los datos
     .get(getUsers)
-    //para guardar un nuevo dato
     .post(createUser)
 
 router.route('/:id')
     .get()
-    //para guardar un nuevo dato
     .post()
-    //para actualizar un dato 
     .put()
-    //para eliminar un dato
     .delete()
 
 

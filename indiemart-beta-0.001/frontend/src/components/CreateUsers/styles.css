@@ -1,0 +1,20 @@
+.col1 {
+    margin: 5px;
+    width: 8%;
+}
+.col2 {
+    border: white;
+    width: 92%;
+}
+.rowCel {
+    display: flex;
+    width: 100%;
+}
+.col3 {
+
+    width: 20%;
+}
+.col4 {
+    border: white;
+    width: 80%;
+}
