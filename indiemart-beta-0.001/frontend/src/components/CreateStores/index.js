@@ -58,9 +58,9 @@ export const CreateStore = props => {
         };
 
         if (datos.editing === true) {
-            await axios.put('http://localhost:4000/api/tiendas/' + datos._id, newStore)
+            updateStore(datos._id, newStore);
         } else {
-            await axios.post('http://localhost:4000/api/tiendas', newStore);
+            addStore(newStore);
         }
 
         // props.history.push('/');

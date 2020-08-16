@@ -24,9 +24,9 @@ export const CreateArticle = props => {
         };
 
         if (datos.editing === true) {
-            await axios.put('http://localhost:4000/api/articulos' + datos._id, newArticle)
+            updateArticle(datos._id, newArticle);
         } else {
-            await axios.post('http://localhost:4000/api/articulos', newArticle);
+            addArticle(newArticle);
         }
     }
 
@@ -36,7 +36,7 @@ export const CreateArticle = props => {
             [e.target.name]: e.target.value,
 
         })
-        
+
 
     }
 
