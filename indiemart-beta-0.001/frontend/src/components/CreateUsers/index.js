@@ -51,12 +51,17 @@ export const CreateUser = props => {
         <div class="row">
             <div className="col-md-6">
                 <div className="card card-body">
-                    <h4>
-                        Registro
-                    </h4>
+                    <div className="card card-body">
+                        <h3>
+                            Registro
+                        </h3>
+                    </div>
                     <br />
                     {/**Nombre del usuario */}
                     <div className="form-group">
+                        <h5>
+                            Nombre
+                        </h5>
                         <input
                             className="form-control"
                             name="nombre"
@@ -68,6 +73,9 @@ export const CreateUser = props => {
                     </div>
                     {/**Apellido paterno del usuario */}
                     <div className="form-group">
+                        <h5>
+                            Apellido paterno
+                        </h5>
                         <input
                             type="text"
                             className="form-control"
@@ -80,6 +88,9 @@ export const CreateUser = props => {
                     </div>
                     {/**Apelldio materno del usuario */}
                     <div className="form-group">
+                        <h5>
+                            Apellido materno
+                        </h5>
                         <input
                             type="text"
                             className="form-control"
@@ -94,6 +105,9 @@ export const CreateUser = props => {
 
                     {/**Email del usuario */}
                     <div className="form-group">
+                        <h5>
+                            Correo electronico
+                        </h5>
                         <input
                             type="text"
                             className="form-control"
@@ -106,6 +120,9 @@ export const CreateUser = props => {
                     </div>
                     {/**Contrasena del usuario */}
                     <div className="form-group">
+                        <h5>
+                            Contraseña
+                        </h5>
                         <input
                             type="text"
                             className="form-control"
@@ -117,6 +134,9 @@ export const CreateUser = props => {
                         />
                     </div>
                     {/**Celular del usuario */}
+                    <h5>
+                        Celular o Telefono
+                    </h5>
                     <div className="rowCel">
                         <div className="col1">
                             +52
@@ -168,6 +188,9 @@ export const CreateUser = props => {
                     </div> */}
                     {/**Pais del usuario */}
                     <div className="form-group">
+                        <h5>
+                            Pais
+                        </h5>
                         <select
                             name="pais"
                             className="form-control"
@@ -184,6 +207,9 @@ export const CreateUser = props => {
                     </div>
                     {/**Estado del usuario */}
                     <div className="form-group">
+                        <h5>
+                            Estado
+                        </h5>
                         <select
                             name="estado"
                             className="form-control"
@@ -200,6 +226,9 @@ export const CreateUser = props => {
                     </div>
                     {/**Ciudad del usuario */}
                     <div className="form-group">
+                        <h5>
+                            Ciudad
+                        </h5>
                         <select
                             name="ciudad"
                             className="form-control"
