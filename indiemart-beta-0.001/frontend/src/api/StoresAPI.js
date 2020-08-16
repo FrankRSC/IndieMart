@@ -8,10 +8,17 @@ const baseUrl = 'http://localhost:4000/api/tiendas'
 
 export const addStore = async data => {
     try {
-        const res = await axios.post(baseUrl, data)
-        return res;
-    }catch (err){
-        return err.res;
+        const res = await axios({
+            url: baseUrl,
+            method: 'POST',
+            data,
+            heders: {
+                'content-type': 'multipart/form-data'
+            }
+        })
+        return res
+    } catch (err) {
+        return err.res
     }
 }
 
@@ -24,7 +31,7 @@ export const updateStore = async (id, data) => {
     try {
         const res = await axios.put(baseUrl + "/", id, data)
         return res;
-    }catch (err){
+    } catch (err) {
         return err.res;
     }
 }
