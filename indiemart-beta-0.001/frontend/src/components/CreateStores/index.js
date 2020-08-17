@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { addStore, updateStore } from '../../api/StoresAPI';
 
 export const CreateStore = props => {
 
@@ -74,7 +75,7 @@ export const CreateStore = props => {
 
         })
         console.log([e.target.name], e.target.value)
-        
+
 
     }
 
