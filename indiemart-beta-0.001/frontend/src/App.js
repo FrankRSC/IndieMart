@@ -8,6 +8,7 @@ import {Login} from './components/Login/index';
 import {CreateArticle} from './components/CreateArticles/index';
 import Navbar from './components/Navbar';
 import {CreateUser} from './components/CreateUsers/index';
+import {SendCommentary} from './components/SendCommentary/index';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/login" component={Login}/>
         <Route path="/createArticle" component={CreateArticle}/>
         <Route path="/register" component={CreateUser}/>
+        <Route path="/commentary" component={SendCommentary}/>
       </div>
     </Router>
   );

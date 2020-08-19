@@ -11,7 +11,7 @@ IndieMart es una plataforma para los negocios pequeños e independientes que se 
 - [ ] Tomar los datos del usuario logueado para la creacion de tiendas y articulos
 ## FRONTEND
 - [x] Comenzar frontend. -Izza
-- [ ] Crear modulo para contactarnos - Iza
+- [x] Crear modulo para contactarnos - Iza
 - [x] Login - Frank
 - [x] Registro - Iza
 - [x] Creacion de articulos - Frank
