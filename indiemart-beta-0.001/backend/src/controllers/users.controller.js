@@ -1,7 +1,14 @@
+const User = require('../models/User');
+
+
+
 const usersCtrl = {};
 
+// passport.authenticate()
 const modelUsuario = require('../models/User');
 //Toma todos los usuarios
+
+
 usersCtrl.getUsers = async (req, res) => {
     try {
         const Usuarios = await modelUsuario.find();
@@ -29,6 +36,10 @@ usersCtrl.createUser = async (req, res) => {
     } = req.body;
     console.log(req.body)
     try {
+        const emailUser = await User.findOne({ email: email})
+        if(emailUser){
+            res.json({ message: 'Este correo ya esta registrado' });
+        }
         const nuevoUsuario = new modelUsuario({
 
             nombre,
@@ -44,7 +55,11 @@ usersCtrl.createUser = async (req, res) => {
             ciudad,
 
         });
-        console.log(nuevoUsuario)
+
+        //Encripta la contrasena y la guarda en el campo contrasena
+        nuevoUsuario.contrasena =  await nuevoUsuario.encryptPassword(contrasena);
+        
+        console.log(nuevoUsuario.contrasena)
         await nuevoUsuario.save();
         res.json({ message: 'Usuario gurdado' });
         res.status(201).send();
@@ -55,6 +70,7 @@ usersCtrl.createUser = async (req, res) => {
 
 //Toma un usuario
 usersCtrl.getUser = async (req, res) => {
+
     try {
         const usuario = await modelUsuario.findById(req.params.id);
         res.json(usuario);

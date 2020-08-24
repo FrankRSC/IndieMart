@@ -1,8 +1,11 @@
 //importa express
 const express = require('express');
+const session = require('express-session');
 const morgan = require('morgan');
 const multer = require('multer');
 const path = require('path');
+
+const passport = require('./middleware/passport');
 //importa cors
 const cors = require('cors');
 
@@ -19,6 +22,8 @@ app.set('port', process.env.PORT || 4000);
 
 //Dos servidores pueden intercambiar datos entre ellos con cors
 app.use(cors());
+
+
 //iza porle descripcionporfa no c que hace :v
 app.use(morgan('dev'));
 //Configuracion para subir imagen
@@ -35,6 +40,18 @@ app.use(multer(storage).single('image'));
 //para que el servidor use express con formatos json
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
+
+//Session
+app.use(session({
+    secret: 'secretword',
+    resave: true,
+    saveUninitialized: true
+}))
+// Passport
+app.use(passport.initialize())
+app.use(passport.session())
+
+
 
 //------- Routes - Rutas de la api -----//
 

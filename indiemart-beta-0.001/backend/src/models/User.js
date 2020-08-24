@@ -1,5 +1,6 @@
 //importa el objeto Schema y model
 const { Schema, model } = require('mongoose');
+const bcrypt = require('bcryptjs');
 
 const userSchema = new Schema({
     //id_propietario
@@ -18,6 +19,16 @@ const userSchema = new Schema({
     //para que tenga la fechad e creacion o modificacion
     timestamps: true
 });
+
+userSchema.methods.encryptPassword = async (contrasena) => {
+   const salt = await bcrypt.genSalt(10);
+   const hash = bcrypt.hash(contrasena, salt);
+   return hash;
+}
+
+userSchema.methods.matchPassword = async function (contrasena) {
+    return await bcrypt.compare(contrasena, this.contrasena);
+}
 
 //Exporta el schema
 module.exports = model('Usuario', userSchema);
