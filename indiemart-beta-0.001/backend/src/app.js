@@ -69,4 +69,7 @@ app.use('/api/articulos', require('./routes/articles'));
 //ruta que maneja los pedidos
 app.use('/api/pedidos', require('./routes/orders'));
 
+//ruta para enviar comentario por correo
+app.use("/comentario", require('./routes/mail'));
+
 module.exports = app;

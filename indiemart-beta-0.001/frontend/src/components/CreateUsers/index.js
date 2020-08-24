@@ -35,7 +35,7 @@ export const CreateUser = props => {
             estado: datos.estado,
             ciudad: datos.ciudad,
         };
-        addUser(newUser);
+        await addUser(newUser);
     }
 
     /**tomar nombre y valor del campo */
@@ -44,7 +44,6 @@ export const CreateUser = props => {
             ...datos,
             [e.target.name]: e.target.value
         })
-        console.log(e.target.name, e.target.value);
     }
 
     return (
