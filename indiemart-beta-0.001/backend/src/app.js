@@ -4,14 +4,15 @@ const session = require('express-session');
 const morgan = require('morgan');
 const multer = require('multer');
 const path = require('path');
+const passport = require('passport')
 
-const passport = require('./middleware/passport');
+
 //importa cors
 const cors = require('cors');
 
 //guarda el objeto que regresa express
 const app = express();
-
+require('./middleware/passport/passport');
 //Settings - configuracion del servidor
 
 //define el puerto a usar
@@ -41,15 +42,18 @@ app.use(multer(storage).single('image'));
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 
+
+
+
 //Session
 app.use(session({
-    secret: 'secretword',
+    secret: 'secreto',
     resave: true,
-    saveUninitialized: true
-}))
+    saveUninitialized: true,
+}));
 // Passport
-app.use(passport.initialize())
-app.use(passport.session())
+app.use(passport.initialize());
+app.use(passport.session());
 
 
 

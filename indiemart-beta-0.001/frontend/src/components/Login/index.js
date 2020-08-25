@@ -19,11 +19,18 @@ export const Login = props => {
     //loguea al usuario
     const onSubmit = async (e) => {
         e.preventDefault();
-        await axios.post('http://localhost:4000/api/usuarios/signin', 
-        {username: datos.email, password: datos.contrasena});
-        const data = await axios.get('http://localhost:4000/api/usuarios/user')
-        console.log(data);
-        
+        const response = await axios({
+            url: 'http://localhost:4000/api/usuarios/signin',
+            method: 'POST',
+            data: {username: datos.email, password: datos.contrasena},
+          })
+          if(response.status !== 200) {
+              console.log('esanoestucontrase;a')
+          }else{
+            if(datos){
+                props.history.push('/create');
+              }
+          }
     }
 
     //toma los datos del usuario logueado
