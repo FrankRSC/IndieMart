@@ -80,6 +80,7 @@ usersCtrl.getUser = async (req, res) => {
     }
 };
 
+
 //Modificar usuario
 usersCtrl.modifyUser = async (req, res) => {
     const {

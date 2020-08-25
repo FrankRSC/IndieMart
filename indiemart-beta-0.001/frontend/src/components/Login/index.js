@@ -16,15 +16,17 @@ export const Login = props => {
         })
     }
 
+    //loguea al usuario
     const onSubmit = async (e) => {
-        const User = {
-            email: datos.email,
-            contrasena: datos.contrasena
-        }
         e.preventDefault();
-        await axios.post('http://localhost:4000/api/usuarios/signin', {email: User.email, contrasena: User.contrasena});
+        await axios.post('http://localhost:4000/api/usuarios/signin', 
+        {username: datos.email, password: datos.contrasena});
+        const data = await axios.get('http://localhost:4000/api/usuarios/user')
+        console.log(data);
         
     }
+
+    //toma los datos del usuario logueado
 
     return (
         <div className="container">

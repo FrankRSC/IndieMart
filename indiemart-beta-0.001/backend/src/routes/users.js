@@ -6,7 +6,7 @@ const router = Router();
 
 const passport = require('../middleware/passport');
 //importa las funciones del controlador
-const { getUsers, getUser, deleteUser, modifyUser, createUser } = require('../controllers/users.controller.js');
+const { getUsers, getUser, deleteUser, modifyUser, createUser,getLogged } = require('../controllers/users.controller.js');
 
 
 //Cuando se visita la ruta api/users/ con sus diferentes metodos
@@ -22,13 +22,21 @@ router.post(
         console.log(req.body)
         next()
     },
-    passport.authenticate('local'),
+    passport.authenticate('local',{
+        successRedirect: '',
+        failureRedirect: '',
+    }),
     (req, res) => {
         console.log('logged in', req.user);
-        var userInfo = {
+        const userInfo = {
             username: req.user.username
         };
         res.send(userInfo);
+    }
+)
+
+router.get('/user', async (req, res) => {
+        res.send(req.user);
     }
 )
 
