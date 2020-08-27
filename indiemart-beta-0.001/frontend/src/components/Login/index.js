@@ -25,7 +25,7 @@ export const Login = props => {
             console.log('esanoestucontrase;a')
         } else {
             if (datos) {
-                props.history.push('/login');
+                props.history.push('/create');
             }
         }
     }
