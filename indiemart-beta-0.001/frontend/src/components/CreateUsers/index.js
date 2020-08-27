@@ -35,7 +35,14 @@ export const CreateUser = props => {
             estado: datos.estado,
             ciudad: datos.ciudad,
         };
-        await addUser(newUser);
+        const response = await addUser(newUser);
+
+        if(response.status !== 200) {
+            console.log('Error')
+        }else{
+            props.history.push('/login');
+        }
+
     }
 
     /**tomar nombre y valor del campo */

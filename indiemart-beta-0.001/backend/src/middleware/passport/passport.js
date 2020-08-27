@@ -7,15 +7,12 @@ passport.use(new LocalStrategy({
     usernameField: 'username',
 }, async (username, contrasena, done) => {
     const user = await User.findOne({
-
         email: username
-
     })
     if (!user) {
         return done(null, false, { message: 'Usuario no encontrado' });
     } else {
         bcrypt.compare(contrasena, user.contrasena, (err, match) => {
-            console.log(match)
             if (match) {
                 return done(null, user)
             } else {

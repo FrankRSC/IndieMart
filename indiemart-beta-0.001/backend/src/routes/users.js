@@ -23,6 +23,14 @@ router.post(
     }
 )
 
+
+router.get(
+    '/logout', (req, res) => {
+        req.logout();
+        res.status(100)
+    }
+)
+
 router.route('/:id')
     .get()
     .post()
