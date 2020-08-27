@@ -19,4 +19,5 @@ IndieMart es una plataforma para los negocios pequeños e independientes que se 
 - [ ] Vista de las tiendas disponibles - Iza
 - [ ] Visa de la lista de productos disponibles de cada tienda - Iza
 - [ ] Pagina principal
+- [ ] Edicion de informacion
 
