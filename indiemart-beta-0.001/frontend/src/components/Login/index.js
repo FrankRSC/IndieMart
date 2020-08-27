@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useState } from 'react';
+import { authenticate } from '../../api/LoginAPI';
+
 
 export const Login = props => {
 
     const [datos, setDatos] = useState({
         email: '',
-        contrasena:''
+        contrasena: ''
     })
 
     const onInputChange = (e) => {
@@ -19,18 +20,7 @@ export const Login = props => {
     //loguea al usuario
     const onSubmit = async (e) => {
         e.preventDefault();
-        const response = await axios({
-            url: 'http://localhost:4000/api/usuarios/signin',
-            method: 'POST',
-            data: {username: datos.email, password: datos.contrasena},
-          })
-          if(response.status !== 200) {
-              console.log('esanoestucontrase;a')
-          }else{
-            if(datos){
-                props.history.push('/create');
-              }
-          }
+        authenticate(datos);
     }
 
     //toma los datos del usuario logueado
@@ -70,7 +60,7 @@ export const Login = props => {
                         <form onSubmit={onSubmit}>
                             <button type="submit" className="btn btn-primary">
                                 Iniciar sesion
-                            </button>                            
+                            </button>
                         </form>
 
                     </div>

@@ -7,7 +7,7 @@ IndieMart es una plataforma para los negocios pequeños e independientes que se 
 - [x] CRUD de usuarios.
 - [ ] Implementar subida de imagenes a la base de datos.
 - [x] Probar guardado en la base de datos.
-- [ ] Hacer login funcional
+- [x] Hacer login funcional
 - [ ] Tomar los datos del usuario logueado para la creacion de tiendas y articulos
 ## FRONTEND
 - [x] Comenzar frontend. -Izza
@@ -15,4 +15,9 @@ IndieMart es una plataforma para los negocios pequeños e independientes que se 
 - [x] Login - Frank
 - [x] Registro - Iza
 - [x] Creacion de articulos - Frank
+- [ ] Perfil
+- [ ] Vista de las tiendas disponibles - Iza
+- [ ] Visa de la lista de productos disponibles de cada tienda - Iza
+- [ ] Pagina principal
+- [ ] Edicion de informacion
 

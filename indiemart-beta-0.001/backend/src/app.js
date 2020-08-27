@@ -30,7 +30,7 @@ app.use(morgan('dev'));
 //Configuracion para subir imagen
 
 const storage = multer.diskStorage({
-    destination: path.join(__dirname,'public/uploads'),
+    destination: path.join(__dirname, 'public/uploads'),
     filename: (req, file, cb) => {
         cb(null, new Date().getTime() + path.extname(file.originalname));
     }
@@ -40,7 +40,7 @@ app.use(multer(storage).single('image'));
 
 //para que el servidor use express con formatos json
 app.use(express.json());
-app.use(express.urlencoded({extended: false}));
+app.use(express.urlencoded({ extended: false }));
 
 
 

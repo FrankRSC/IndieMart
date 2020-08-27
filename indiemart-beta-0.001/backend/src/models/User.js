@@ -21,9 +21,9 @@ const userSchema = new Schema({
 });
 
 userSchema.methods.encryptPassword = async (contrasena) => {
-   const salt = await bcrypt.genSalt(10);
-   const hash = bcrypt.hash(contrasena, salt);
-   return hash;
+    const salt = await bcrypt.genSalt(10);
+    const hash = bcrypt.hash(contrasena, salt);
+    return hash;
 }
 
 userSchema.methods.matchPassword = async function (contrasena) {
