@@ -36,8 +36,8 @@ usersCtrl.createUser = async (req, res) => {
     } = req.body;
     console.log(req.body)
     try {
-        const emailUser = await User.findOne({ email: email})
-        if(emailUser){
+        const emailUser = await User.findOne({ email: email })
+        if (emailUser) {
             res.json({ message: 'Este correo ya esta registrado' });
         }
         const nuevoUsuario = new modelUsuario({
@@ -57,8 +57,8 @@ usersCtrl.createUser = async (req, res) => {
         });
 
         //Encripta la contrasena y la guarda en el campo contrasena
-        nuevoUsuario.contrasena =  await nuevoUsuario.encryptPassword(contrasena);
-        
+        nuevoUsuario.contrasena = await nuevoUsuario.encryptPassword(contrasena);
+
         console.log(nuevoUsuario.contrasena)
         await nuevoUsuario.save();
         res.json({ message: 'Usuario gurdado' });
