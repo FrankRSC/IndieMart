@@ -20,7 +20,14 @@ export const Login = props => {
     //loguea al usuario
     const onSubmit = async (e) => {
         e.preventDefault();
-        authenticate(datos);
+        const res = await authenticate(datos);
+        if (res.status !== 200) {
+            console.log('esanoestucontrase;a')
+        } else {
+            if (datos) {
+                props.history.push('/create');
+            }
+        }
     }
 
     //toma los datos del usuario logueado
