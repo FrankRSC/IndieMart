@@ -17,7 +17,7 @@ export const authenticate = async (data) => {
             console.log('esanoestucontrase;a')
         } else {
             if (data) {
-                window.location.href = "http://localhost:3000/create";
+                window.location.href = "/create";
             }
         }
         return res;
