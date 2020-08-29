@@ -44,9 +44,8 @@ export const CreateStore = props => {
         }
     }
 
-
-
     const onSubmit = async (e) => {
+
         e.preventDefault();
         const newStore = {
             nombre: datos.nombre,

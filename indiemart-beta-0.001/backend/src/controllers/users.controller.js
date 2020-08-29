@@ -63,21 +63,7 @@ usersCtrl.createUser = async (req, res) => {
             res.json({ message: 'Usuario gurdado' });
             res.status(201).send();
         }
-        const nuevoUsuario = new modelUsuario({
-
-            nombre,
-            apellidoP,
-            apellidoM,
-            // fechaNac,
-            email,
-            contrasena,
-            celular,
-            // tipoUsuario,
-            pais,
-            estado,
-            ciudad,
-
-        });
+    
 
         //Encripta la contrasena y la guarda en el campo contrasena
         nuevoUsuario.contrasena = await nuevoUsuario.encryptPassword(contrasena);

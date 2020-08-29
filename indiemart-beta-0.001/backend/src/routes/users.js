@@ -23,6 +23,14 @@ router.post(
     }
 )
 
+router.get(
+    '/user',
+    (req, res) => {
+        console.log(req.data)
+        res.status(100)
+    }
+)
+
 
 router.get(
     '/logout', (req, res) => {

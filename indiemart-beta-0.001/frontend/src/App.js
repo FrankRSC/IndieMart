@@ -6,7 +6,7 @@ import './App.css';
 import {CreateStore} from './components/CreateStores/index';
 import {Login} from './components/Login/index';
 import {CreateArticle} from './components/CreateArticles/index';
-import Navbar from './components/Navbar';
+import {Navbar} from './components/Navbar';
 import {CreateUser} from './components/CreateUsers/index';
 import {SendCommentary} from './components/SendCommentary/index';
 
