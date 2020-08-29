@@ -31,6 +31,10 @@ router.get(
     }
 )
 
+// router.get('/info', (req, res) => {
+//     res.send(req.user);
+// })
+
 router.route('/:id')
     .get()
     .post()
