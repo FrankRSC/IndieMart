@@ -29,9 +29,8 @@ export const Login = props => {
             }
         }
     }
-
+    
     //toma los datos del usuario logueado
-
     return (
         <div className="container">
             <div className="row">
