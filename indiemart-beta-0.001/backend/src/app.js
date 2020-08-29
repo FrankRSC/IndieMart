@@ -47,10 +47,10 @@ app.use(express.urlencoded({ extended: false }));
 
 //Session
 app.use(session({
-    secret: 'secreto',
+    secret:'secreto',
     resave: true,
-    saveUninitialized: true,
-}));
+    saveUninitialized: true
+}))
 // Passport
 app.use(passport.initialize());
 app.use(passport.session());

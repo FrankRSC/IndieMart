@@ -21,8 +21,16 @@ export const CreateStore = props => {
     //const [users, setUsers] = useState([]);
 
     useEffect(() => {
+        // validarLog();
         validar();
     }, [])
+
+    const validarLog = async () => {
+        const res = await axios({
+            url: 'http://localhost:4000/api/usuarios/user',
+            method: 'GET',
+        });
+    }
 
     const validar = async () => {
         if (props.match.params.id) {

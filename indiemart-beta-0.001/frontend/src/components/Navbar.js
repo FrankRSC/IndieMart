@@ -8,7 +8,7 @@ export const Navbar = props => {
 
     useEffect(() => {
 
-        axiosData();
+        // axiosData();
 
     }, [])
 
@@ -18,10 +18,9 @@ export const Navbar = props => {
                 url: 'http://localhost:4000/api/usuarios/user',
                 method: 'GET',
             });
-            setUser(res);
-            console.log(user)
+            console.log(res)
         } catch (err) {
-
+            console.log(err)
         }
 
     }

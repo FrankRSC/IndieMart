@@ -21,12 +21,12 @@ export const Login = props => {
     const onSubmit = async (e) => {
         e.preventDefault();
         const res = await authenticate(datos);
-        if (res.status !== 200) {
-            console.log('esanoestucontrase;a')
-        } else {
-            if (datos) {
-                props.history.push('/create');
-            }
+        console.log('COMP LOGIN', res)
+        if(res.status !== 200){
+            console.log(res.status)
+            
+        }else{
+            props.history.push('/create');
         }
     }
     

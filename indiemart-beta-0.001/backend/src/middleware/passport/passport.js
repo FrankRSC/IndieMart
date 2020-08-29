@@ -10,15 +10,15 @@ passport.use(new LocalStrategy({
         email: username
     })
     if (!user) {
-        return done(null, false, { message: 'Usuario no encontrado' });
+        return done(null, false, console.log('no se encontro el usuario'));
     } else {
-        bcrypt.compare(contrasena, user.contrasena, (err, match) => {
-            if (match) {
-                return done(null, user)
-            } else {
-                return done(null, false, console.log('Incorrect password or user'))
-            }
-        })
+        const match = await bcrypt.compare(contrasena, user.contrasena)
+        if (match) {
+            return done(null, user)
+        } else {
+            return done(null, false, console.log('Incorrect password or user'))
+        }
+
     }
 }));
 

@@ -4,7 +4,10 @@ const { Router } = require('express');
 //Guarda el objeto que devuelve router
 const router = Router();
 
+const { isAuthenticated } = require('../middleware/passport/auth');
+
 const passport = require('passport');
+
 //importa las funciones del controlador
 const { getUsers, getUser, deleteUser, modifyUser, createUser } = require('../controllers/users.controller.js');
 
@@ -17,17 +20,21 @@ router.route('/')
 //LOGIN
 router.post(
     '/signin',
-    passport.authenticate('local'),
-    function(req, res) {
-        res.status(200).send(req.user)
-    }
+    passport.authenticate('local',{
+        successRedirect: '/usuarios/user'
+    })
 )
 
+// router.get('/auth',isAuthenticated, (req, res) => {
+//     res.status(200)
+// })
+
+//se llama en la navbar
 router.get(
     '/user',
+    isAuthenticated,
     (req, res) => {
-        console.log(req.data)
-        res.status(100)
+        console.log(req)
     }
 )
 
