@@ -40,10 +40,7 @@ usersCtrl.createUser = async (req, res) => {
         if (emailUser) {
             res.json({ message: 'Este correo ya esta registrado' });
         } else {
-
-
             const nuevoUsuario = new modelUsuario({
-
                 nombre,
                 apellidoP,
                 apellidoM,
@@ -55,7 +52,6 @@ usersCtrl.createUser = async (req, res) => {
                 pais,
                 estado,
                 ciudad,
-
             });
             //Encripta la contrasena y la guarda en el campo contrasena
             nuevoUsuario.contrasena = await nuevoUsuario.encryptPassword(contrasena);
@@ -63,29 +59,6 @@ usersCtrl.createUser = async (req, res) => {
             res.json({ message: 'Usuario gurdado' });
             res.status(201).send();
         }
-        const nuevoUsuario = new modelUsuario({
-
-            nombre,
-            apellidoP,
-            apellidoM,
-            // fechaNac,
-            email,
-            contrasena,
-            celular,
-            // tipoUsuario,
-            pais,
-            estado,
-            ciudad,
-
-        });
-
-        //Encripta la contrasena y la guarda en el campo contrasena
-        nuevoUsuario.contrasena = await nuevoUsuario.encryptPassword(contrasena);
-
-        console.log(nuevoUsuario.contrasena)
-        await nuevoUsuario.save();
-        res.json({ message: 'Usuario gurdado' });
-        res.status(201).send();
     } catch (error) {
         res.status(400);
     }
