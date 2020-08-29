@@ -13,6 +13,13 @@ export const authenticate = async (data) => {
             method: 'POST',
             data: { username: data.email, password: data.contrasena },
         });
+        if (res.status !== 200) {
+            console.log('esanoestucontrase;a')
+        } else {
+            if (data) {
+                window.location.href = "/create";
+            }
+        }
         return res;
     } catch (err) {
         return err.res;
